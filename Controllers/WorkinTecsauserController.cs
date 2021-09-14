@@ -44,51 +44,10 @@ namespace MVCAPITecsa.Controllers
                 int result = 0;
                 using (var db = new MySqlConnection(_connection))
                 {
-                    var sql = "INSERT INTO workin_tecsauser(name)" +
-                        " VALUES(@name)";
+                    var sql = "INSERT INTO workin_tecsauser(id_work,id_user)" +
+                        " VALUES(@id_work,@id_user)";
                     result = db.Execute(sql, model);
                 }
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-
-        [HttpPut]
-        public IActionResult EditRol(Models.Rol model)
-        {
-            try
-            {
-                int result = 0;
-                using (var db = new MySqlConnection(_connection))
-                {
-                    var sql = "UPDATE rol set name=@name" +
-                        " where id_rol=@id_rol";
-                    result = db.Execute(sql, model);
-                }
-
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-
-        [HttpDelete]
-        public IActionResult DeleteRol(Models.Rol model)
-        {
-            try
-            {
-                int result = 0;
-                using (var db = new MySqlConnection(_connection))
-                {
-                    var sql = "delete from rol where id_rol=@id_rol";
-                    result = db.Execute(sql, model);
-                }
-
                 return Ok(result);
             }
             catch (Exception ex)
