@@ -44,8 +44,8 @@ namespace MVCAPITecsa.Controllers
                 int result = 0;
                 using (var db = new MySqlConnection(_connection))
                 {
-                    var sql = "INSERT INTO rol(name)" +
-                        " VALUES(@name)";
+                    var sql = "INSERT INTO roll_call(name_day,id_user)" +
+                        " VALUES(@name_day,@id_user)";
                     result = db.Execute(sql, model);
                 }
                 return Ok(result);
