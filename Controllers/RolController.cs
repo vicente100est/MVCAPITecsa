@@ -13,7 +13,7 @@ namespace MVCAPITecsa.Controllers
     [ApiController]
     public class RolController : ControllerBase
     {
-        private string _connection = @"Server = localhost; Database = tecsaoffice; Uid=root; Pwd = 12345678";
+        private string _connection = @"Server = tecnicaencolectores.com.mx; Database = tecsaoffice; Uid=tecnicae; Pwd = empresa21Tecs@; SslMode = none";
         [HttpGet]
         public IActionResult GetRol()
         {
